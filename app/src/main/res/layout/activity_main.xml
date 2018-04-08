@@ -1,18 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.basketballscorekeeper.MainActivity">
 
-    <TextView
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/basketball"
+        android:contentDescription="basketball_background"/>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:text="Home"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:fontFamily="serif-monospace"
+                />
+
+            <TextView
+                android:id="@+id/score_home_team"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="16dp"
+                android:text="0"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:id="@+id/push_button_home"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/button_bg_round"
+                android:padding="15dp"
+                android:text="+3 points"
+                android:onClick="addThreeForHome"
+                android:fontFamily="monospace"
+                />
+
+
+            <Button
+                android:id="@+id/push_button2_home"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/button_bg_round"
+                android:padding="15dp"
+                android:text="+2 points"
+                android:onClick="addTwoForHome"
+                android:fontFamily="monospace"
+                />
+
+            <Button
+                android:id="@+id/push_button3_home"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/button_bg_round"
+                android:padding="15dp"
+                android:text="free throw"
+                android:onClick="addOneForHome"
+                android:fontFamily="monospace"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:text="guest"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:fontFamily="serif-monospace"
+                />
+
+            <TextView
+                android:id="@+id/score_guest_team"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="16dp"
+                android:text="0"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:id="@+id/push_button_guest"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/button_bg_round"
+                android:padding="15dp"
+                android:text="+3 points"
+                android:onClick="addThreeForGuest"
+                android:fontFamily="monospace"
+                />
+
+
+            <Button
+                android:id="@+id/push_button2_guest"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/button_bg_round"
+                android:padding="15dp"
+                android:text="+2 points"
+                android:onClick="addTwoForGuest"
+                android:fontFamily="monospace"
+                />
+
+            <Button
+                android:id="@+id/push_button3_guest"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:background="@drawable/button_bg_round"
+                android:padding="15dp"
+                android:text="free throw"
+                android:onClick="addOneForGuest"
+                android:fontFamily="monospace"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:onClick="scoreReset"
+        android:text="Reset" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
